@@ -1,0 +1,11 @@
+class Passenger < ActiveRecord::Base
+  before_save :default_values
+  
+  belongs_to :car
+  belongs_to :floor
+  validates :name, presence: true
+  
+  def default_values
+    self.floor.id ||= '1'
+  end
+end

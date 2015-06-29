@@ -1,0 +1,8 @@
+# app/workers/hard_worker.rb
+class Hardworker
+  include Sidekiq::worker
+  
+  def perform(name, count)
+    puts 'Doing hard work'
+  end
+end

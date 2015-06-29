@@ -1,0 +1,17 @@
+class Car < ActiveRecord::Base
+  has_many :passengers
+  belongs_to :floor
+  validates :name, presence: true
+  
+  before_save :default_values
+  
+  def self.list_for_select
+    self.all.map do |car|
+      [car.name, car.id]
+    end
+  end
+  
+  def default_values
+    self.floor.id ||= '1'
+  end
+end

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elevator</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>
+        <strong><%= link_to 'MAIN PAGE', pages_info_path %></strong>
+      </li>
+      <li>
+        <%= link_to 'Show All Floors', floors_path %>
+      </li>
+      <li>
+        <%= link_to 'Show All Cars', cars_path %>
+      </li>
+      <li>
+        <%= link_to 'Show All Passengers', passengers_path %>
+      </li>
+    </ul>
+  </nav>
+  
+<%= yield %>
+
+</body>
+</html>

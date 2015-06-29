@@ -1,0 +1,28 @@
+<h1>Pages#info</h1>
+<p>Find me in app/views/pages/info.html.erb</p>
+<p>
+  Elevator Info
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Elevators</th>
+      <th>Current Floor</th>
+      <th>Num Passengers</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.name %></td>
+        <td><%= car.floor.name %></td>
+        <td>
+          <%= link_to "#{car.passengers.count}", car %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

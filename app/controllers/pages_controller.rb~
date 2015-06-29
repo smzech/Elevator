@@ -1,0 +1,7 @@
+class PagesController < ApplicationController
+  def info
+    @floors = Floor.all
+    @cars = Car.all
+    @passengers = Passenger.all
+  end
+end

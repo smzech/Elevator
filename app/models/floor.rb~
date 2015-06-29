@@ -1,0 +1,9 @@
+class Floor < ActiveRecord::Base
+  has_many :cars
+  validates :name, presence: true
+  
+  def self.list_for_select
+    self.all.map do |floor|
+      [floor.name, floor.id]
+  end
+end
